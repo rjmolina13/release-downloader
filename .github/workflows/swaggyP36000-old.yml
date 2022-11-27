@@ -38,7 +38,7 @@ jobs:
       run: |
         rm -rf "./test-downloads"
         
-    - name: Run action
+    - name: Download oldest post 1
       uses: ./
       id: download-public
       with: 
@@ -48,7 +48,182 @@ jobs:
         tarBall: true
         zipBall: true
         out-file-path: "./test-downloads"
+
+    - name: Download oldest post 2
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "Update"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
           
+    - name: Download oldest post 3
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-11-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 4
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-12-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 6
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-14-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 7
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-15-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 8
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-16-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 9
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-17-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 10
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-18-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 11
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-19-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 12
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-20-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 13
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-21-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 14
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-22-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 15
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-24-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 16
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-25-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download oldest post 17
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-26-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: Download last post
+      uses: ./
+      id: download-public
+      with: 
+        repository: "swaggyP36000/TrollStore-IPAs"
+        tag: "11-27-2022"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
           
     - name: List downloaded files
       shell: bash
@@ -64,7 +239,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v3.1.0
       with:
-       name: "ipa"
+       name: "swaggyP36000-ipas-old"
        path: ${{ github.workspace }}/test-downloads
        
     - name: Cleanup
