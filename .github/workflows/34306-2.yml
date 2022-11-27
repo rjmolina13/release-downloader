@@ -1,4 +1,4 @@
-name: "34306/TrollStoreiPA/TS_DailyiPA"
+name: "34306-2"
 on:
   # Trigger manually
   workflow_dispatch:
