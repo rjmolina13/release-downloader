@@ -56,3 +56,8 @@ jobs:
           echo ${{steps.download-public.outputs.tag_name}}
         else echo "Unable to read output variable from step download-public"; exit 1
         fi
+    - name: Upload artifacts
+       uses: actions/upload-artifact@v3.1.0
+       with:
+        name: "ipa"
+        path: ${{ github.workspace }}/test-downloads
