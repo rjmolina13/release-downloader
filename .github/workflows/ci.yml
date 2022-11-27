@@ -45,7 +45,7 @@ jobs:
         fileName: "*"
         tarBall: true
         zipBall: true
-        out-file-path: "./test-downloads"
+        out-file-path: "my-downloads"
           
     - name: List downloaded files
       shell: bash
