@@ -15,8 +15,6 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - macos-latest
-          - windows-latest
     runs-on: ${{ matrix.os }}
     
     steps:
@@ -30,11 +28,11 @@ jobs:
         node-version: 16
         cache: 'npm'
 
-    - name: Build and test 
-      shell: bash
-      run: |
-        npm ci --passWithNoTests
-        npm run all --passWithNoTests
+    # - name: Build and test 
+      # shell: bash
+      # run: |
+        # npm ci --passWithNoTests
+        # npm run all --passWithNoTests
     
     - name: Run action
       uses: ./
@@ -45,7 +43,7 @@ jobs:
         fileName: "*"
         tarBall: true
         zipBall: true
-        out-file-path: "my-downloads"
+        out-file-path: "./test-downloads"
           
     - name: List downloaded files
       shell: bash
