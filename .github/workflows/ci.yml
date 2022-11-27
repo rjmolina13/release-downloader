@@ -34,7 +34,7 @@ jobs:
       shell: bash
       run: |
         npm ci --passWithNoTests
-        npm run all 
+        npm run all --passWithNoTests
     
     - name: Run action
       uses: ./
