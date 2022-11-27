@@ -39,10 +39,10 @@ jobs:
         rm -rf "./test-downloads"
         fi
         
-    - name: Download oldest post
+    - name: Run action
       uses: ./
       id: download-public
-      with:
+      with: 
         repository: "swaggyP36000/TrollStore-IPAs"
         tag: "11-09-2022", "Update"
         fileName: "*"
