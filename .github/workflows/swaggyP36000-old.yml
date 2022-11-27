@@ -1,4 +1,4 @@
-name: "swaggyP36000"
+name: "swaggyP36000-old"
 on:
   # Trigger manually
   workflow_dispatch:
