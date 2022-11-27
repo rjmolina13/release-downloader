@@ -41,6 +41,7 @@ jobs:
       id: download-public
       with: 
         repository: "34306/TrollStoreiPA"
+        tag: "TS_DailyiPA"
         fileName: "*"
         tarBall: true
         zipBall: true
