@@ -37,7 +37,6 @@ jobs:
       shell: bash
       run: |
         rm -rf "./test-downloads"
-        fi
         
     - name: Run action
       uses: ./
@@ -72,4 +71,3 @@ jobs:
       shell: bash
       run: |
         rm -rf "./test-downloads"
-        fi
