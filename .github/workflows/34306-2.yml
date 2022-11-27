@@ -1,4 +1,4 @@
-name: "Build and Test"
+name: "34306/TrollStoreiPA/TS_DailyiPA"
 on:
   # Trigger manually
   workflow_dispatch:
@@ -39,7 +39,7 @@ jobs:
       id: download-public
       with: 
         repository: "34306/TrollStoreiPA"
-        tag: "TS_DailyiPA"
+        tag: "TS_iPA"
         fileName: "*"
         tarBall: true
         zipBall: true

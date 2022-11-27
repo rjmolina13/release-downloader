@@ -1,0 +1,63 @@
+name: "34306/TrollStoreiPA/TS_DailyiPA"
+on:
+  # Trigger manually
+  workflow_dispatch:
+  pull_request:
+  push:
+    tags:
+      - "*"
+    branches:
+      - main
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Setup node and cache dependencies
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        cache: 'npm'
+
+    # - name: Build and test 
+      # shell: bash
+      # run: |
+        # npm ci --passWithNoTests
+        # npm run all --passWithNoTests
+    
+    - name: Run action
+      uses: ./
+      id: download-public
+      with: 
+        repository: "34306/TrollStoreiPA"
+        tag: "TS_DailyiPA"
+        fileName: "*"
+        tarBall: true
+        zipBall: true
+        out-file-path: "./test-downloads"
+          
+    - name: List downloaded files
+      shell: bash
+      run: ls -lrth test-downloads
+
+    - name: Read output variable set by previous steps
+      shell: bash
+      run: |
+        if [ -n ${{steps.download-public.outputs.tag_name}} ]; then
+          echo ${{steps.download-public.outputs.tag_name}}
+        else echo "Unable to read output variable from step download-public"; exit 1
+        fi
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3.1.0
+      with:
+       name: "ipa"
+       path: ${{ github.workspace }}/test-downloads
